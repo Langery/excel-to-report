@@ -1,0 +1,13 @@
+# excel-to-report 依赖声明
+#
+# 分工原则：CSV 路径纯标准库（argparse / csv / json / re / math / datetime），
+# 不装任何东西也能跑；只有 .xlsx / .xlsm 路径需要第三方库。
+#
+# 安装：pip install -r requirements.txt
+
+# 【可选增强】仅 .xlsx / .xlsm 路径需要。
+# 缺失时 read_table.py 不静默降级，而是显式报错并提示三条出路：
+#   1) pip install openpyxl
+#   2) 改用平台内置表格读取能力
+#   3) 请用户提供同一张表的 CSV 版本（走纯标准库路径，无需安装任何依赖）
+openpyxl>=3.1
